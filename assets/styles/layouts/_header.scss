@@ -1,0 +1,45 @@
+.banner {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.brand {
+  float: left;
+  width: 20%;
+}
+.nav-primary {
+  float: left;
+  width: 60%;
+  color: #000000;
+}
+
+.nav-primary ul ul {
+  position: absolute;
+  background: red;
+  display: none;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.nav-primary a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.nav-primary li {
+  margin-right: 20px;
+  list-style: none;
+}
+
+.nav-primary li.current-menu-item,
+.nav-primary li:hover
+ {
+  border-bottom: 1px solid #000000;
+}
+
+.nav-primary li:hover>ul {
+  display: block;
+}
+
+.header-account {
+  float: right;
+  width: 20%;
+  text-transform: uppercase;
+}

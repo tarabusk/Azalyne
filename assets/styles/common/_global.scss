@@ -1,0 +1,75 @@
+
+a {
+  color: #000000;
+}
+a:hover {
+  color: gray;
+}
+.clear-layout{
+  clear: both;
+}
+
+/* WOOCOMMERCE */
+.woocommerce-result-count,
+.woocommerce-ordering,
+.woocommerce-breadcrumb,
+.woocommerce-tabs,
+.product_meta {
+  display: none;
+}
+
+.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1 {
+  max-width: 100%;
+}
+
+.woocommerce-info {
+  border-top-color: gray;
+}
+.woocommerce button.button.alt.disabled{
+    background: transparent;
+    color: #000000;
+}
+/** Categories WooCommerce **/
+
+.woocommerce-products-header h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+.woocommerce-loop-product__title {
+  width: 70%; float: left;
+}
+.price {
+  width: 30%; float: right;
+
+}
+.woocommerce ul.products li.product .price {
+  color: gray;
+  padding-top: 5px;
+}
+
+/** Single Produit **/
+
+.azalyne-produit-content {
+  background: blue;
+}
+.woocommerce div.product p.price {
+  float: none;
+  color: gray;
+}
+
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+  background: transparent;
+  color: #000000;
+  font-weight: bold;
+  border-bottom: 1px solid #000000;
+  border-radius: 0;
+  padding: 5px;
+}
+.woocommerce div.product div.images img {
+  margin-bottom: 5px;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__image:nth-child(n+2) {
+  width: 24%;
+  margin-right: 1%;
+}
