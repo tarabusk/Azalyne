@@ -1,0 +1,18 @@
+.atelier-content {
+  display:flex;
+  justify-content: space-between;
+}
+.atelier-img-left {
+  width: 33.33%;
+}
+.atelier-img-left>img {
+  max-width: 100%;
+}
+
+.atelier-text {
+  width: 64.66%;
+}
+
+.atelier-text>img{
+  width: 100%;
+}

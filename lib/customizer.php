@@ -53,3 +53,15 @@ function wc_wc20_variation_price_format( $price, $product ) {
   return $price;
   }
 }
+
+/** WOOCOMMERCE CUSTOMIZATION **/
+//remove_action( 'woocommerce_after_single_product_summary', __NAMESPACE__ . '\\woocommerce_output_product_data_tabs', 10 );
+
+//* http://gasolicious.com/remove-tabs-keep-product-description-woocommerce/
+//  Location: add to functions.php
+//  Output: adds full description to below price
+
+function woocommerce_template_product_description() {
+  woocommerce_get_template( 'single-product/tabs/description.php' );
+}
+add_action( 'woocommerce_single_product_summary', __NAMESPACE__ . '\\woocommerce_template_product_description', 90 );

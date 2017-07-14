@@ -1,0 +1,25 @@
+.philo-content {
+  display:flex;
+  justify-content: space-between;
+}
+.philo-img-left {
+  width: 33.33%;
+}
+.philo-img-left>img {
+  max-width: 100%;
+}
+
+.philo-text {
+  width: 64.66%;
+}
+.philo-text>div{
+  width: 48%;
+  float: left;
+  margin-left: 2%;
+}
+.philo-text>div:nth-child(0) {
+  margin-left: 0;
+}
+.philo-text>img{
+  width: 100%;
+}

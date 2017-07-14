@@ -64,8 +64,26 @@ function widgets_init() {
   ]);
 
   register_sidebar([
-    'name'          => __('Footer', 'sage'),
-    'id'            => 'sidebar-footer',
+    'name'          => __('Footer Gauche', 'sage'),
+    'id'            => 'sidebar-footer-left',
+    'before_widget' => '<section class="widget %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>'
+  ]);
+
+  register_sidebar([
+    'name'          => __('Footer Centre', 'sage'),
+    'id'            => 'sidebar-footer-center',
+    'before_widget' => '<section class="widget %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>'
+  ]);
+
+  register_sidebar([
+    'name'          => __('Footer Droit', 'sage'),
+    'id'            => 'sidebar-footer-right',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
@@ -87,7 +105,6 @@ function display_sidebar() {
     is_page (),
     is_category (),
     is_taxonomy (),
-    true==true,
     is_front_page(),
     is_page_template('template-custom.php'),
   ]);
@@ -108,15 +125,3 @@ function assets() {
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
-
-/** WOOCOMMERCE CUSTOMIZATION **/
-//remove_action( 'woocommerce_after_single_product_summary', __NAMESPACE__ . '\\woocommerce_output_product_data_tabs', 10 );
-
-//* http://gasolicious.com/remove-tabs-keep-product-description-woocommerce/
-//  Location: add to functions.php
-//  Output: adds full description to below price
-
-function woocommerce_template_product_description() {
-  woocommerce_get_template( 'single-product/tabs/description.php' );
-}
-add_action( 'woocommerce_single_product_summary', __NAMESPACE__ . '\\woocommerce_template_product_description', 90 );

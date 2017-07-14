@@ -17,7 +17,9 @@
   position: absolute;
   background: red;
   display: none;
+  z-index: 9;
   background-color: rgba(255, 255, 255, 0.5);
+  padding-left: 0;
 }
 .nav-primary a {
   text-decoration: none;
@@ -26,15 +28,18 @@
 .nav-primary li {
   margin-right: 20px;
   list-style: none;
+  border-bottom: 1px solid transparent;
 }
 
-.nav-primary li.current-menu-item,
-.nav-primary li:hover
+.nav-primary ul>li.current-menu-item,
+.nav-primary ul>li:hover
  {
   border-bottom: 1px solid #000000;
+  font-weight: 400;
 }
 
-.nav-primary li:hover>ul {
+.nav-primary li:hover>ul,
+.nav-primary ul  ul:hover {
   display: block;
 }
 
@@ -42,4 +47,17 @@
   float: right;
   width: 20%;
   text-transform: uppercase;
+}
+
+.page-header-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-align: center;
+
+}
+.page-header-image h1{
+  line-height: 200px;
 }
