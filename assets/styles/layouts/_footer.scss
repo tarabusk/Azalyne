@@ -4,3 +4,22 @@
   width: 33.3%;
   float: left;
 }
+footer {
+  margin-top: 40px;
+}
+
+footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+footer:before {
+  content: '';
+  display: block;
+  height: 200px;
+  width: 200px;
+  background: url(../images/azalyne-logo.png);
+  margin: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+}

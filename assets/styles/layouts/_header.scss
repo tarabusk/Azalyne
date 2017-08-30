@@ -1,6 +1,6 @@
 .banner {
   padding-top: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
 }
 
 .brand {
@@ -56,7 +56,11 @@
   margin-bottom: 20px;
   color: #ffffff;
   text-align: center;
+  text-transform: uppercase;
+}
 
+.home .page-header-image {
+  height: 500px; 
 }
 .page-header-image h1{
   line-height: 200px;

@@ -18,6 +18,7 @@ use Roots\Sage\Wrapper;
       do_action('get_header');
       get_template_part('templates/header');
     ?>
+    <?php get_template_part('templates/page', 'header-image'); // Used for full width header ?>
     <div class="wrap container" role="document">
       <div class="content row">
         <main class="main">

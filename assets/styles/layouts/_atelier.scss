@@ -1,18 +1,25 @@
 .atelier-content {
   display:flex;
   justify-content: space-between;
+  margin-bottom: 30px;
 }
 .atelier-img-left {
-  width: 33.33%;
+  width: 49%;
+}
+.atelier-img-left img {
+  width: 100%;
 }
 .atelier-img-left>img {
   max-width: 100%;
 }
 
 .atelier-text {
-  width: 64.66%;
+  width: 49%;
 }
 
 .atelier-text>img{
+  width: 100%;
+}
+.ateler-img-bottom {
   width: 100%;
 }

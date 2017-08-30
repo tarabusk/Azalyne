@@ -65,3 +65,65 @@ function woocommerce_template_product_description() {
   woocommerce_get_template( 'single-product/tabs/description.php' );
 }
 add_action( 'woocommerce_single_product_summary', __NAMESPACE__ . '\\woocommerce_template_product_description', 90 );
+
+// REMOVE ADD TO CART BUTTON ON SHOP PAGE
+add_action( 'woocommerce_after_shop_loop_item', __NAMESPACE__ . '\\remove_add_to_cart_buttons', 1 );
+
+function remove_add_to_cart_buttons() {
+  if( is_product_category() || is_shop()) {
+    remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
+  }
+}
+
+// Change number or products per row to 3
+add_filter('loop_shop_columns',  __NAMESPACE__ . '\\loop_columns');
+if (!function_exists('loop_columns')) {
+	function loop_columns() {
+		return 3; // 3 products per row
+	}
+}
+// Remove Related Products Output
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+
+/**
+ * Hook in on activation
+ */
+
+/**
+ * Define image sizes https://docs.woocommerce.com/document/set-woocommerce-image-dimensions-upon-theme-activation/
+ */
+ /*
+function azalyne_woocommerce_image_dimensions() {
+	global $pagenow;
+
+	if ( ! isset( $_GET['activated'] ) || $pagenow != 'themes.php' ) {
+		return;
+	}
+
+  	$catalog = array(
+		'width' 	=> '400',	// px
+		'height'	=> '400',	// px
+		'crop'		=> 1 		// true
+	);
+
+	$single = array(
+		'width' 	=> '600',	// px
+		'height'	=> '600',	// px
+		'crop'		=> 1 		// true
+	);
+
+	$thumbnail = array(
+		'width' 	=> '120',	// px
+		'height'	=> '120',	// px
+		'crop'		=> 0 		// false
+	);
+
+	// Image sizes
+	update_option( 'shop_catalog_image_size', $catalog ); 		// Product category thumbs
+	update_option( 'shop_single_image_size', $single ); 		// Single product image
+	update_option( 'shop_thumbnail_image_size', $thumbnail ); 	// Image gallery thumbs
+}
+
+add_action( 'after_switch_theme', __NAMESPACE__ . '\\azalyne_woocommerce_image_dimensions', 1 );
+*/

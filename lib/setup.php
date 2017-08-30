@@ -98,16 +98,7 @@ add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
 function display_sidebar() {
   static $display;
 
-  isset($display) || $display = !in_array(true, [
-    // The sidebar will NOT be displayed if ANY of the following return true.
-    // @link https://codex.wordpress.org/Conditional_Tags
-    is_404(),
-    is_page (),
-    is_category (),
-    is_taxonomy (),
-    is_front_page(),
-    is_page_template('template-custom.php'),
-  ]);
+  return false;
 
   return apply_filters('sage/display_sidebar', $display);
 }
